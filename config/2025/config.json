@@ -146,103 +146,103 @@
       ]
     },
     {
-      "name": "Autonomous",
-      "fields": [
-        {
-          "title": "Moved?",
-          "description": "Check if the robot moved during autonomous.",
-          "type": "boolean",
-          "required": false,
-          "code": "Mved",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        }
-        {
-          "title": "Coral L1 Scored",
-          "description": "The number of level 1 coral scored during autonomous.",
-          "type": "counter",
-          "required": false,
-          "code": "CLOA",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Coral L2 Scored",
-          "description": "The number of level 2 coral scored during autonomous.",
-          "type": "counter",
-          "required": false,
-          "code": "CLTA",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Coral L3 Scored",
-          "description": "The number of level 3 coral scored during autonomous.",
-          "type": "counter",
-          "required": false,
-          "code": "CLThA",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Coral L4 Scored",
-          "description": "The number of level 4 coral scored during autonomous.",
-          "type": "counter",
-          "required": false,
-          "code": "CLFA",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Barge Algae Scored",
-          "description": "The number of Algae scored in the barge during autonomous.",
-          "type": "counter",
-          "required": false,
-          "code": "BASA",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Processor Algae Scored",
-          "description": "The number of Algae scored in the processor during autonomous.",
-          "type": "counter",
-          "required": false,
-          "code": "PASA",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Dislodged Algae?",
-          "type": "boolean",
-          "required": false,
-          "code": "dto",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
-          "title": "Auto Foul",
-          "type": "counter",
-          "required": false,
-          "code": "auf",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        }
-      ]
+  "name": "Autonomous",
+  "fields": [
+    {
+      "title": "Moved?",
+      "description": "Check if the robot moved during autonomous.",
+      "type": "boolean",
+      "required": false,
+      "code": "Mved",
+      "formResetBehavior": "reset",
+      "defaultValue": false
     },
+    {
+      "title": "Coral L1 Scored",
+      "description": "The number of level 1 coral scored during autonomous.",
+      "type": "counter",
+      "required": false,
+      "code": "CLOA",
+      "formResetBehavior": "reset",
+      "defaultValue": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "title": "Coral L2 Scored",
+      "description": "The number of level 2 coral scored during autonomous.",
+      "type": "counter",
+      "required": false,
+      "code": "CLTA",
+      "formResetBehavior": "reset",
+      "defaultValue": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "title": "Coral L3 Scored",
+      "description": "The number of level 3 coral scored during autonomous.",
+      "type": "counter",
+      "required": false,
+      "code": "CLThA",
+      "formResetBehavior": "reset",
+      "defaultValue": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "title": "Coral L4 Scored",
+      "description": "The number of level 4 coral scored during autonomous.",
+      "type": "counter",
+      "required": false,
+      "code": "CLFA",
+      "formResetBehavior": "reset",
+      "defaultValue": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "title": "Barge Algae Scored",
+      "description": "The number of Algae scored in the barge during autonomous.",
+      "type": "counter",
+      "required": false,
+      "code": "BASA",
+      "formResetBehavior": "reset",
+      "defaultValue": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "title": "Processor Algae Scored",
+      "description": "The number of Algae scored in the processor during autonomous.",
+      "type": "counter",
+      "required": false,
+      "code": "PASA",
+      "formResetBehavior": "reset",
+      "defaultValue": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "title": "Dislodged Algae?",
+      "type": "boolean",
+      "required": false,
+      "code": "dto",
+      "formResetBehavior": "reset",
+      "defaultValue": false
+    },
+    {
+      "title": "Auto Foul",
+      "type": "counter",
+      "required": false,
+      "code": "auf",
+      "formResetBehavior": "reset",
+      "defaultValue": 0,
+      "min": 0,
+      "step": 1
+    }
+  ]
+},
     {
       "name": "Teleop",
       "fields": [
@@ -336,7 +336,7 @@
           "step": 1
         },
         {
-          "title": "Crossed Feild/Played Defense?",
+          "title": "Crossed Field/Played Defense?",
           "type": "boolean",
           "required": false,
           "code": "CFPDT",
