@@ -363,6 +363,21 @@
           }
         },
         {
+      "name": "Match Result",
+      "fields": [
+        {
+          "title": "Match Result",
+          "type": "select",
+          "required": true,
+          "code": "res",
+          "defaultValue": "No",
+          "choices": {
+            "Win": "Win",
+            "Loss": "Loss",
+            "Tie": "Tie",
+          }
+        },
+        {
           "title": "Defended?",
           "type": "boolean",
           "required": false,
