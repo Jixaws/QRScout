@@ -21,8 +21,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./dist
+
       - name: Deploy preview
-        uses: rossjrw/pr-preview-action@v2
+        uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./dist/
           preview-branch: gh-pages
