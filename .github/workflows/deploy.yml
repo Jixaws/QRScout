@@ -40,7 +40,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4  # Ensure this is the latest version
+        uses: actions/upload-pages-artifact@v2  # Corrected to v2
         with:
           path: './dist'  # Ensure this path is correct
       - name: Deploy to GitHub Pages
