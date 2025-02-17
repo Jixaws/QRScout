@@ -222,99 +222,62 @@
           "defaultValue": 0,
           "min": 0,
           "step": 1
-        },
-        {
-          "title": "Dislodged Algae",
-          "description": "The number of dislodged algae during autonomous.",
-          "type": "counter",
-          "required": false,
-          "code": "DLA",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
         }
       ]
-    }
-  ]
-},
+    },
     {
       "name": "Teleop",
       "fields": [
         {
-          "title": "Total Corals Scored",
-          "description": "The total number of corals scored during teleop.",
-          "type": "counter",
-          "required": false,
-          "code": "TCSC",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Total Algae Scored",
-          "description": "The total number of algae scored during teleop.",
-          "type": "counter",
-          "required": false,
-          "code": "TASC",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Level 1 Coral Scored",
+          "title": "Coral L1 Scored",
           "description": "The number of level 1 coral scored during teleop.",
           "type": "counter",
           "required": false,
-          "code": "L1CS",
+          "code": "CL1T",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
-          "title": "Level 2 Coral Scored",
+          "title": "Coral L2 Scored",
           "description": "The number of level 2 coral scored during teleop.",
           "type": "counter",
           "required": false,
-          "code": "L2CS",
+          "code": "CL2T",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
-          "title": "Level 3 Coral Scored",
+          "title": "Coral L3 Scored",
           "description": "The number of level 3 coral scored during teleop.",
           "type": "counter",
           "required": false,
-          "code": "L3CS",
+          "code": "CL3T",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
-          "title": "Level 4 Coral Scored",
+          "title": "Coral L4 Scored",
           "description": "The number of level 4 coral scored during teleop.",
           "type": "counter",
           "required": false,
-          "code": "L4CS",
+          "code": "CL4T",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
           "step": 1
-        }
-      ]
-    }
-    {
+        },
+        {
           "title": "Barge Algae Scored",
-          "description": "The number of Algae scored in the barge during autonomous.",
+          "description": "The number of Algae scored in the barge during teleop.",
           "type": "counter",
           "required": false,
-          "code": "BAST",
+          "code": "BALT",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
@@ -322,81 +285,84 @@
         },
         {
           "title": "Processor Algae Scored",
-          "description": "The number of Algae scored in the processor during autonomous.",
+          "description": "The number of Algae scored in the processor during teleop.",
           "type": "counter",
           "required": false,
-          "code": "PAST",
+          "code": "PALT",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
-          "title": "Crossed Feild/Played Defense?",
+          "title": "Tipped/Fell Over",
+          "description": "Did the robot tip or fall over during teleop?",
           "type": "boolean",
           "required": false,
-          "code": "CFPDT",
+          "code": "TFO",
           "formResetBehavior": "reset",
           "defaultValue": false
         },
         {
-          "title": "Tipped/Fell Over?",
+          "title": "Touched Opposing Cage",
+          "description": "Did the robot touch the opposing alliance's cage during teleop?",
           "type": "boolean",
           "required": false,
-          "code": "TFOT",
+          "code": "TOC",
           "formResetBehavior": "reset",
           "defaultValue": false
         },
         {
-          "title": "Touched Opposing Cage?",
-          "type": "counter",
-          "required": false,
-          "code": "Fou/Tech",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "step": 1
-        },
-        {
-          "title": "Died?",
+          "title": "Died",
+          "description": "Did the robot die during teleop?",
           "type": "boolean",
           "required": false,
-          "code": "DEg",
+          "code": "DIED",
           "formResetBehavior": "reset",
           "defaultValue": false
-        },
+        }
+      ]
+    },
     {
       "name": "Endgame",
       "fields": [
         {
-          "title": "Endgame Bonus",
-          "description": "Endgame bonus points.",
-          "type": "number",
+          "title": "End Position",
+          "description": "Where did the robot end up at the end of the match?",
+          "type": "select",
           "required": false,
-          "code": "EGBonus",
+          "code": "EP",
           "formResetBehavior": "reset",
-          "defaultValue": 0
-        }
+          "defaultValue": "Not Parked",
+          "choices": {
+            "Not Parked": "Not Parked",
+            "Parked": "Parked",
+            "Shallow Climb": "Shallow Climb",
+            "Deep Climb": "Deep Climb",
+            "Failed Climb": "Failed Climb"
+          }
+        },
         {
-          "title": "Defended?",
+          "title": "Defended",
+          "description": "Did the robot defend against the opposing alliance's robot during endgame?",
           "type": "boolean",
           "required": false,
-          "code": "DEFEg",
+          "code": "DEF",
           "formResetBehavior": "reset",
           "defaultValue": false
         },
         {
-          "title": "Endgame Result",
-          "description": "The result of the endgame.",
+          "title": "Match Result",
+          "description": "What was the result of the match?",
           "type": "select",
           "required": false,
-          "code": "EGResult",
+          "code": "MR",
           "formResetBehavior": "reset",
-          "defaultValue": "None",
+          "defaultValue": "Tie",
           "choices": {
-            "None": "None",
-            "Points Scored": "Points Scored",
-            "Mission Complete": "Mission Complete",
-            "Docked": "Docked"
+            "Win": "Win",
+            "Loss": "Loss",
+            "Tie": "Tie"
           }
         }
       ]
