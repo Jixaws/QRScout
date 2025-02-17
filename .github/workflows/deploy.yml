@@ -38,16 +38,18 @@ jobs:
         run: npm run build
       - name: List files in dist  # Check if dist exists and contains the build files
         run: ls -la ./dist
+      - name: List files in build folder  # Additional debug: Verify contents of the build folder
+        run: ls -la ./dist
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
-          name: github-pages  # This name should match the deploy step
+          name: github-pages  # Ensure this matches the deploy step's artifact_name
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifact_name: github-pages  # This should match the name used in the upload step
+          artifact_name: github-pages  # Ensure this matches the upload step
           preview: false
