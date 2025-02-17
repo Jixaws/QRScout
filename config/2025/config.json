@@ -237,111 +237,88 @@
           "title": "Dislodged Algae?",
           "type": "boolean",
           "required": false,
-          "code": "daT",
+          "code": "dto",
           "defaultValue": false
         },
         {
-          "title": "Pickup Location",
-          "type": "select",
-          "required": false,
-          "code": "TGPL",
-          "defaultValue": "",
-          "choices": {
-            "1": "None",
-            "2": "Ground",
-            "3": "Human Player",
-            "4": "Both"
-          },
-          "multiSelect": true
-        },
-        {
           "title": "Coral L1 Scored",
-          "description": "The number of level 1 coral scored during autonomous.",
+          "description": "The number of level 1 coral scored during teleop.",
           "type": "counter",
           "required": false,
-          "code": "CLOT",
+          "code": "CL1T",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
           "title": "Coral L2 Scored",
-          "description": "The number of level 2 coral scored during autonomous.",
+          "description": "The number of level 2 coral scored during teleop.",
           "type": "counter",
           "required": false,
-          "code": "CLTT",
+          "code": "CL2T",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
           "title": "Coral L3 Scored",
-          "description": "The number of level 3 coral scored during autonomous.",
+          "description": "The number of level 3 coral scored during teleop.",
           "type": "counter",
           "required": false,
-          "code": "CLThT",
+          "code": "CL3T",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
           "title": "Coral L4 Scored",
-          "description": "The number of level 4 coral scored during autonomous.",
+          "description": "The number of level 4 coral scored during teleop.",
           "type": "counter",
           "required": false,
-          "code": "CLFT",
+          "code": "CL4T",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
           "title": "Barge Algae Scored",
-          "description": "The number of Algae scored in the barge during autonomous.",
+          "description": "The number of Algae scored in the barge during teleop.",
           "type": "counter",
           "required": false,
-          "code": "BAST",
+          "code": "BTS",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
           "title": "Processor Algae Scored",
-          "description": "The number of Algae scored in the processor during autonomous.",
+          "description": "The number of Algae scored in the processor during teleop.",
           "type": "counter",
           "required": false,
-          "code": "PAST",
+          "code": "PTS",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
-          "title": "Crossed Field/Played Defense?",
-          "type": "boolean",
+          "title": "Robot Damage",
+          "type": "select",
           "required": false,
-          "code": "CFPDT",
-          "defaultValue": false
+          "code": "damaged",
+          "choices": {
+            "no": "No",
+            "minor": "Minor",
+            "major": "Major"
+          }
         },
         {
-          "title": "Tipped/Fell Over?",
-          "type": "boolean",
-          "required": false,
-          "code": "TFOT",
-          "defaultValue": false
-        },
-        {
-          "title": "Touched Opposing Cage?",
+          "title": "Tele Foul",
           "type": "counter",
           "required": false,
-          "code": "Fou/Tech",
+          "code": "tfoul",
           "defaultValue": 0,
+          "min": 0,
           "step": 1
-        },
-        {
-          "title": "Died?",
-          "type": "boolean",
-          "required": false,
-          "code": "DEg",
-          "defaultValue": false
         }
       ]
     },
@@ -349,86 +326,42 @@
       "name": "Endgame",
       "fields": [
         {
-          "title": "End Position",
+          "title": "Level Climb",
+          "description": "Check if the robot climbed to the level.",
           "type": "select",
-          "required": true,
-          "code": "epo",
-          "defaultValue": "No",
-          "choices": {
-            "No": "Not Parked",
-            "P": "Parked",
-            "Sc": "Shallow Climb",
-            "Dc": "Deep Climb",
-            "Fc": "Failed Climb"
-          }
-        },
-        {
-      "name": "Match Result",
-      "fields": [
-        {
-          "title": "Match Result",
-          "type": "select",
-          "required": true,
-          "code": "res",
-          "defaultValue": "No",
-          "choices": {
-            "Win": "Win",
-            "Loss": "Loss",
-            "Tie": "Tie",
-          }
-        },
-        {
-          "title": "Defended?",
-          "type": "boolean",
           "required": false,
-          "code": "DEFEg",
-          "defaultValue": false
+          "code": "climb",
+          "choices": {
+            "none": "None",
+            "mid": "Mid",
+            "high": "High"
+          }
+        },
+        {
+          "title": "Endgame Foul",
+          "type": "counter",
+          "required": false,
+          "code": "efoul",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
         }
       ]
     },
     {
-      "name": "Postmatch",
+      "name": "Match Result",
       "fields": [
         {
-          "title": "Offense Skill",
-          "type": "range",
-          "required": false,
-          "code": "or",
-          "defaultValue": 3,
-          "min": 1,
-          "max": 5,
-          "step": 1
-        },
-        {
-          "title": "Defensive Skill",
-          "type": "range",
-          "required": false,
-          "code": "dr",
-          "defaultValue": 3,
-          "min": 1,
-          "max": 5,
-          "step": 1
-        },
-        {
-          "title": "Yellow/Red Card",
+          "title": "Match Result",
+          "description": "Was the match won or lost?",
           "type": "select",
-          "required": true,
-          "code": "yc",
-          "defaultValue": "No Card",
-          "choices": {
-            "No Card": "No Card",
-            "Yellow": "Yellow Card",
-            "Red": "Red Card"
-          }
-        },
-        {
-          "title": "Comments",
-          "type": "text",
           "required": false,
-          "code": "co",
-          "defaultValue": "",
-          "min": 0,
-          "max": 50
+          "code": "result",
+          "choices": {
+            "won": "Won",
+            "lost": "Lost",
+            "tie": "Tie"
+          }
         }
       ]
     }
