@@ -224,14 +224,20 @@
           "step": 1
         },
         {
-          "title": "Dislodged Algae?",
-          "type": "boolean",
+          "title": "Dislodged Algae",
+          "description": "The number of dislodged algae during autonomous.",
+          "type": "counter",
           "required": false,
-          "code": "DAA",
-          "defaultValue": false
+          "code": "DLA",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
         }
       ]
-    },
+    }
+  ]
+},
     {
       "name": "Teleop",
       "fields": [
