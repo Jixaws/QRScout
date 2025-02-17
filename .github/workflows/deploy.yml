@@ -2,55 +2,51 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: 
-      - main
-  workflow_dispatch:
+    branches: ['main']  # Trigger on push to the main branch
+  workflow_dispatch:  # Allow manual trigger from the Actions tab
 
 permissions:
   contents: read
   pages: write
-  id-token: write
+  id-token: write  # Ensure GitHub Pages deployment has the necessary permissions
 
 concurrency:
   group: 'pages'
-  cancel-in-progress: true
+  cancel-in-progress: true  # Prevent multiple concurrent deployments
 
 env:
-  VITE_STATSIG_CLIENT_KEY: client-FccOCTznRdYyGr7cx3vJoyoWyO1BTqBzv6S2g1lYPvB
+  VITE_STATSIG_CLIENT_KEY: your-client-key  # Replace with your actual environment variable, if needed
 
 jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+      url: ${{ steps.deployment.outputs.page_url }}  # Get the deployed page URL from the deployment step
+    runs-on: ubuntu-latest  # Use the latest version of Ubuntu for deployment
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Checkout the repository
+
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: 'npm'
+          node-version: 18  # Ensure compatibility with your Node.js version
+          cache: 'npm'  # Cache npm dependencies for faster future runs
+
       - name: Install dependencies
-        run: npm install
+        run: npm install  # Install project dependencies
+
       - name: Build
-        run: npm run build
-      - name: List files in dist  # Check if dist exists and contains the build files
-        run: ls -la ./dist
+        run: npm run build  # Run the build command (ensure this outputs to 'dist' or adjust path)
+
       - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: List files in dist
-        run: ls -la ./dist
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/configure-pages@v3  # Set up GitHub Pages configuration
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: './dist'
-          name: 'github-pages'  # Same as the deploy step
-          retention-days: 1
+          path: './dist'  # Path to the build output (ensure this is the correct folder, like 'dist')
+
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifact_name: 'github-pages'  # Ensure consistency
-          preview: false
+        id: deployment
+        uses: actions/deploy-pages@v2  # Deploy the uploaded artifact to GitHub Pages
