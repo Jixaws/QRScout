@@ -58,7 +58,7 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v2  # Ensure this is the correct version
         with:
           path: './dist'  # Ensure this path is correct
 
