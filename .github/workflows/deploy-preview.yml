@@ -13,16 +13,20 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      # Checkout the latest code using v4 to match the other actions
+      - uses: actions/checkout@v4
 
+      # Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Build the project
       - name: Build
         run: npm run build
 
+      # Deploy preview using updated action
       - name: Deploy preview
-        uses: rossjrw/pr-preview-action@v1
+        uses: rossjrw/pr-preview-action@v2  # Ensure using the latest stable version
         with:
           source-dir: ./dist/
           preview-branch: gh-pages
