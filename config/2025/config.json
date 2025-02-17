@@ -315,7 +315,7 @@
           "step": 1
         },
         {
-          "title": "Crossed Feild/Played Defense?",
+          "title": "Crossed Field/Played Defense?",
           "type": "boolean",
           "required": false,
           "code": "CFPDT",
