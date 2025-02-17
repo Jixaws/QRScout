@@ -302,7 +302,62 @@
           "step": 1
         }
       ]
-    },
+    }
+    {
+          "title": "Barge Algae Scored",
+          "description": "The number of Algae scored in the barge during autonomous.",
+          "type": "counter",
+          "required": false,
+          "code": "BAST",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "Processor Algae Scored",
+          "description": "The number of Algae scored in the processor during autonomous.",
+          "type": "counter",
+          "required": false,
+          "code": "PAST",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "Crossed Feild/Played Defense?",
+          "type": "boolean",
+          "required": false,
+          "code": "CFPDT",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },
+        {
+          "title": "Tipped/Fell Over?",
+          "type": "boolean",
+          "required": false,
+          "code": "TFOT",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },
+        {
+          "title": "Touched Opposing Cage?",
+          "type": "counter",
+          "required": false,
+          "code": "Fou/Tech",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "step": 1
+        },
+        {
+          "title": "Died?",
+          "type": "boolean",
+          "required": false,
+          "code": "DEg",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },
     {
       "name": "Endgame",
       "fields": [
@@ -314,6 +369,14 @@
           "code": "EGBonus",
           "formResetBehavior": "reset",
           "defaultValue": 0
+        }
+        {
+          "title": "Defended?",
+          "type": "boolean",
+          "required": false,
+          "code": "DEFEg",
+          "formResetBehavior": "reset",
+          "defaultValue": false
         },
         {
           "title": "Endgame Result",
@@ -336,22 +399,49 @@
       "name": "Postmatch",
       "fields": [
         {
-          "title": "Postmatch Notes",
-          "description": "Additional notes and observations from the match.",
-          "type": "text",
+          "title": "Offense Skill",
+          "type": "range",
           "required": false,
-          "code": "notes",
-          "formResetBehavior": "preserve",
-          "defaultValue": ""
+          "code": "or",
+          "formResetBehavior": "reset",
+          "defaultValue": 3,
+          "min": 1,
+          "max": 5,
+          "step": 1
         },
         {
-          "title": "Pit Scouted",
-          "description": "Check if the robot was scouted in the pits.",
-          "type": "boolean",
+          "title": "Defensive Skill",
+          "type": "range",
           "required": false,
-          "code": "pitScouted",
+          "code": "dr",
           "formResetBehavior": "reset",
-          "defaultValue": false
+          "defaultValue": 3,
+          "min": 1,
+          "max": 5,
+          "step": 1
+        },
+        {
+          "title": "Yellow/Red Card",
+          "type": "select",
+          "required": true,
+          "code": "yc",
+          "formResetBehavior": "reset",
+          "defaultValue": "No Card",
+          "choices": {
+            "No Card": "No Card",
+            "Yellow": "Yellow Card",
+            "Red": "Red Card"
+          }
+        },
+        {
+          "title": "Comments",
+          "type": "text",
+          "required": false,
+          "code": "co",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "min": 0,
+          "max": 50
         }
       ]
     }
