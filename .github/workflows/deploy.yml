@@ -2,47 +2,51 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ['main']  # Trigger on push to the main branch
-  workflow_dispatch:  # Allows manual trigger from the Actions tab
+    branches: ['main']
+  workflow_dispatch:
 
 permissions:
-  contents: read  # Grant permission to read repository contents
-  pages: write  # Grant permission to deploy to GitHub Pages
-  id-token: write  # Grant permission for ID tokens, required for authentication
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: 'pages'  # Ensures only one deployment runs at a time
-  cancel-in-progress: true  # Cancel any in-progress deployments if a new one starts
+  group: 'pages'
+  cancel-in-progress: true
+
+env:
+  VITE_STATSIG_CLIENT_KEY: client-FccOCTznRdYyGr7cx3vJoyoWyO1BTqBzv6S2g1lYPvB
 
 jobs:
   deploy:
     environment:
-      name: github-pages  # Environment for deployment
-      url: ${{ steps.deployment.outputs.page_url }}  # URL of the deployed site
-    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4  # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4 # Updated to the latest version of actions/checkout
 
-      - name: Set up Node
-        uses: actions/setup-node@v3  # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18  # Set Node.js version to 18
+          node-version: 18
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install  # Install the required dependencies
+        run: npm install
 
-      - name: Build the project
-        run: npm run build  # Run the build command (ensure it outputs to ./dist or equivalent)
+      - name: Build
+        run: npm run build
 
-      - name: List build directory
-        run: ls -alh ./dist  # List files in the build directory to verify successful build (adjust path if needed)
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2  # Upload build artifact
+        uses: actions/upload-pages-artifact@v2  # Ensuring v2 (as recommended for GitHub Pages)
         with:
-          path: './dist'  # Adjust to your build output directory (e.g., ./build or ./dist)
+          path: './dist'  # Update if your build folder is different
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2  # Deploy the uploaded artifact to GitHub Pages
+        uses: actions/deploy-pages@v2
