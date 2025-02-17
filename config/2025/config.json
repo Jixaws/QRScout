@@ -222,6 +222,24 @@
           "defaultValue": 0,
           "min": 0,
           "step": 1
+        }, 
+        {
+          "title": "Dislodged Algae?",
+          "type": "boolean",
+          "required": false,
+          "code": "dto",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },
+        {
+          "title": "Auto Foul",
+          "type": "counter",
+          "required": false,
+          "code": "auf",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
         }
       ]
     },
