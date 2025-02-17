@@ -43,7 +43,7 @@ jobs:
         uses: actions/configure-pages@v3  # Set up GitHub Pages configuration
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v3  # Use the correct action for uploading artifacts
         with:
           path: './dist'  # Path to the build output (ensure this is the correct folder, like 'dist')
 
