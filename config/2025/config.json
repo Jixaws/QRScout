@@ -87,20 +87,6 @@
       "fields": [
         {
           "title": "Taxi'd?",
-          "type": "boolean",
-          "required": false,
-          "code": "Taxi",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        }
-      ]
-    }
-  ] 
-}    {
-      "name": "Autonomous",
-      "fields": [
-        {
-          "title": "Taxi'd?",
           "description": "Check if the robot moved during autonomous.",
           "type": "boolean",
           "required": false,
