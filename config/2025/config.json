@@ -130,30 +130,15 @@
           "formResetBehavior": "reset",
           "defaultValue": false
         },
-        {
-          "title": "Cage Position",
-          "description": "The starting level of the cage",
-          "type": "select",
-          "required": true,
-          "code": "CPos",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "SP1": "Deep",
-            "SP2": "Shallow"
-          }
-        }
-      ]
-    },
     {
       "name": "Autonomous",
       "fields": [
         {
-          "title": "Moved?",
+          "title": "Taxi'd?",
           "description": "Check if the robot moved during autonomous.",
           "type": "boolean",
           "required": false,
-          "code": "Mved",
+          "code": "Taxi",
           "formResetBehavior": "reset",
           "defaultValue": false
         },
@@ -246,6 +231,14 @@
     {
       "name": "Teleop",
       "fields": [
+         {
+          "title": "Dislodged Algae?",
+          "type": "boolean",
+          "required": false,
+          "code": "dto",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },
         {
           "title": "Coral L1 Scored",
           "description": "The number of level 1 coral scored during teleop.",
@@ -322,15 +315,6 @@
           "defaultValue": false
         },
         {
-          "title": "Touched Opposing Cage",
-          "description": "Did the robot touch the opposing alliance's cage during teleop?",
-          "type": "boolean",
-          "required": false,
-          "code": "TOC",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
           "title": "Died",
           "description": "Did the robot die during teleop?",
           "type": "boolean",
@@ -353,19 +337,26 @@
           "formResetBehavior": "reset",
           "defaultValue": "Not Parked",
           "choices": {
-            "Not Parked": "Not Parked",
-            "Parked": "Parked",
-            "Shallow Climb": "Shallow Climb",
-            "Deep Climb": "Deep Climb",
-            "Failed Climb": "Failed Climb"
-          }
+            "No": "Not Parked",
+            "P": "Parked",
+            "SC": "Shallow Climb",
+            "DC": "Deep Climb"
         },
-        {
-          "title": "Defended",
+           {
+          "title": "Played as Defence",
           "description": "Did the robot defend against the opposing alliance's robot during endgame?",
           "type": "boolean",
           "required": false,
           "code": "DEF",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },
+        {
+          "title": "Defended Alliance Field",
+          "description": "Did the robot defend in the alliance field?",
+          "type": "boolean",
+          "required": false,
+          "code": "DEFH",
           "formResetBehavior": "reset",
           "defaultValue": false
         },
@@ -419,8 +410,8 @@
           "defaultValue": "No Card",
           "choices": {
             "No Card": "No Card",
-            "Yellow": "Yellow Card",
-            "Red": "Red Card"
+            "Y": "Yellow Card",
+            "R": "Red Card"
           }
         },
         {
