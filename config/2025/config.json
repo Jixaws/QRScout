@@ -54,23 +54,20 @@
       "chart_2": "160 60% 45%",
       "chart_3": "30 80% 55%",
       "chart_4": "280 65% 60%",
-      "chart_5": "340 75% 55%"
-    }
-  },
-{
-  "sections": [
-    {
-      "name": "Prematch",
-      "fields": [
+      "chart_5": "340 75% 55%",
+      "sections": [
         {
-          "title": "Scouter Initials",
-          "description": "Enter the initials of the scouter.",
-          "type": "text",
-          "required": true,
-          "code": "scouter",
-          "formResetBehavior": "preserve",
-          "defaultValue": ""
-        },
+          "name": "Prematch",
+          "fields": [
+            {
+              "title": "Scouter Initials",
+              "description": "Enter the initials of the scouter.",
+              "type": "text",
+              "required": true,
+              "code": "scouter",
+              "formResetBehavior": "preserve",
+              "defaultValue": ""
+            },
         {
           "title": "No Show",
           "description": "Check if the robot did not show up for the match.",
@@ -280,29 +277,30 @@
     {
       "name": "Endgame",
       "fields": [
-        {
-          "title": "End Position",
-          "description": "Where did the robot end up at the end of the match?",
-          "type": "select",
-          "required": false,
-          "code": "EP",
-          "formResetBehavior": "reset",
-          "defaultValue": "Not Parked",
-          "choices": {
-            "No": "Not Parked",
-            "P": "Parked",
-            "SC": "Shallow Climb",
-            "DC": "Deep Climb"
-        },
-           {
-          "title": "Played as Defence",
-          "description": "Did the robot defend against the opposing alliance's robot during endgame?",
-          "type": "boolean",
-          "required": false,
-          "code": "DEF",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
+{
+  "title": "End Position",
+  "description": "Where did the robot end up at the end of the match?",
+  "type": "select",
+  "required": false,
+  "code": "EP",
+  "formResetBehavior": "reset",
+  "defaultValue": "Not Parked",
+  "choices": {
+    "No": "Not Parked",
+    "P": "Parked",
+    "SC": "Shallow Climb",
+    "DC": "Deep Climb"
+  },
+  {
+    "title": "Played as Defence",
+    "description": "Did the robot defend against the opposing alliance's robot during endgame?",
+    "type": "boolean",
+    "required": false,
+    "code": "DEF",
+    "formResetBehavior": "reset",
+    "defaultValue": false
+  }
+},
         {
           "title": "Defended Alliance Field",
           "description": "Did the robot defend in the alliance field?",
