@@ -290,7 +290,8 @@
     "P": "Parked",
     "SC": "Shallow Climb",
     "DC": "Deep Climb"
-  },
+  }
+},
   {
     "title": "Played as Defence",
     "description": "Did the robot defend against the opposing alliance's robot during endgame?",
@@ -299,8 +300,7 @@
     "code": "DEF",
     "formResetBehavior": "reset",
     "defaultValue": false
-  }
-},
+  },
         {
           "title": "Defended Alliance Field",
           "description": "Did the robot defend in the alliance field?",
@@ -375,6 +375,8 @@
           "max": 50
         }
       ]
-    }
-  ]
+    } 
+   ]
+  } 
+ } 
 }
